@@ -3,8 +3,7 @@ function modelF(
     index = 0,
     label = "",
     offer = "",
-    sale_offer = "",
-    shipping = null
+    sale_offer = ""
   ) {
     const model = `
       <div class="cod_product_offer">
@@ -22,15 +21,6 @@ function modelF(
     return model;
   }
   
-  function shippingPercentModel(value) {
-    let shippingPercentModel;
-    for (i = 0; i <= 100; i = i + 10) {
-      shippingPercentModel += `
-          <option ${value == i ? "selected" : ""} value="${i}">${i}%</option>
-          `;
-    }
-    return shippingPercentModel;
-  }
   
   const offersContainer = $(".cod_product_offers");
   const addButton = $(".add_offer_field");
@@ -45,7 +35,6 @@ function modelF(
   // Remove Field
   $(document).on("click", ".remove_offer_field", function (e) {
     e.preventDefault();
-    const offerContainer = $(".cod_product_offer");
     $(this).parent().remove();
   });
   
